@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animasyon/ana_sayfa.dart';
+import 'package:flutter_animasyon/routher/routher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Flutter Demo',
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home: const AnaSayfa(),
     );
   }
 }

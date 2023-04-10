@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animasyon/detay_sayfasi.dart';
+import 'package:go_router/go_router.dart';
 
 class AnaSayfa extends StatelessWidget {
   const AnaSayfa({super.key});
@@ -29,12 +30,7 @@ class AnaSayfa extends StatelessWidget {
             alignment: Alignment.center,
             child: OutlinedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DetaySayfasi(),
-                  ),
-                );
+                context.go("/detay-sayfasi");
               },
               child: const Text("detay sayfasına git")
             ),
