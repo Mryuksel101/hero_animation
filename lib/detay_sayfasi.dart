@@ -7,7 +7,7 @@ class DetaySayfasi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-      title: Text("detay sayfasi"),
+      title: Text("ana sayfa"),
       ),
 
       body: Column(

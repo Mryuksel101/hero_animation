@@ -30,10 +30,21 @@ class AnaSayfa extends StatelessWidget {
             alignment: Alignment.center,
             child: OutlinedButton(
               onPressed: () {
-                context.go("/detay-sayfasi");
+                context.go("/home/detay-sayfasi");
               },
               child: const Text("detay sayfasına git")
             ),
+          ),
+
+          const SizedBox(
+            height: 10,
+          ),
+
+          OutlinedButton(
+            onPressed: () {
+              context.go("/home/arabalar");
+            },
+            child: const Text("arabalar sayfasına git")
           ),
         ],
       ),
