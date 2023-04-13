@@ -14,7 +14,7 @@ class ScaffoldWithBottomNavBar extends StatefulWidget {
 
 class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
   static int _calculateSelectedIndex(String location){
-    log("_calculateSelectedIndex fonksiyonu calişti: $location");
+    //log("_calculateSelectedIndex fonksiyonu calişti: $location");
     if(location.startsWith("/home")){
       return 0;
     }
@@ -28,25 +28,22 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
   }
 
   void _onItemTapped(int index){
-    log("_onItemTapped fonksiyonu calişti");
     switch(index){
       case 0:
-      log("0");
         GoRouter.of(context).go('/home');
         break;
       
       case 1:
-      log("1");
       GoRouter.of(context).go('/ayarlar');
     }
   }
   @override
   Widget build(BuildContext context) {
     log("ScaffoldWithBottomNavBar rebuilt edildi");
-    log(GoRouterState.of(context).location);
+    //log(GoRouterState.of(context).location);
     return Scaffold(
       body: widget.child,
-      bottomNavigationBar: GoRouterState.of(context).location=="/home" || GoRouterState.of(context).location=="/ayarlar"? BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: _calculateSelectedIndex(GoRouterState.of(context).location),
         onTap: (value) => _onItemTapped(value),
         items: const [
@@ -64,7 +61,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
             ),
           ),
         ],
-      ):null,
+      )
     );
   }
 }

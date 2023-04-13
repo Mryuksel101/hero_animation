@@ -14,7 +14,7 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
-  initialLocation: "/ayarlar",
+  initialLocation: "/home",
   
   routes: [
     ShellRoute(
@@ -30,13 +30,7 @@ final GoRouter router = GoRouter(
           pageBuilder: (context, state) => const NoTransitionPage(child: AnaSayfa()),
           name: "home",
           routes: [
-            GoRoute(
-              path: 'detay-sayfasi',
-              builder: (context, state){
-                log("detay sayfasi builder");
-                return const DetaySayfasi();
-              }  
-            ),
+            
 
             GoRoute(
               path: 'arabalar',
@@ -62,6 +56,14 @@ final GoRouter router = GoRouter(
           }
         ),
       ]
+    ),
+
+    GoRoute(
+      path: '/home/detay-sayfasi',
+      builder: (context, state){
+        log("detay sayfasi builder");
+        return const DetaySayfasi();
+      }  
     ),
   ],
 );
