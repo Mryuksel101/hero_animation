@@ -43,9 +43,10 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     log("ScaffoldWithBottomNavBar rebuilt edildi");
+    log(GoRouterState.of(context).location);
     return Scaffold(
       body: widget.child,
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: GoRouterState.of(context).location=="/home" || GoRouterState.of(context).location=="/ayarlar"? BottomNavigationBar(
         currentIndex: _calculateSelectedIndex(GoRouterState.of(context).location),
         onTap: (value) => _onItemTapped(value),
         items: const [
@@ -63,7 +64,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
             ),
           ),
         ],
-      ),
+      ):null,
     );
   }
 }

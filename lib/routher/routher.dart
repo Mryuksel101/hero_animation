@@ -15,12 +15,17 @@ final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   initialLocation: "/ayarlar",
+  
   routes: [
     ShellRoute(
       navigatorKey: _rootNavigatorKey,
-      builder: (context, state, child) => ScaffoldWithBottomNavBar(child: child),
+      builder: (context, state, child) {
+        log("shell router builder");
+        return ScaffoldWithBottomNavBar(child: child);
+      },
       routes: [
         GoRoute(
+
           path: '/home',
           pageBuilder: (context, state) => const NoTransitionPage(child: AnaSayfa()),
           name: "home",
@@ -53,7 +58,7 @@ final GoRouter router = GoRouter(
           path: "/ayarlar",
           pageBuilder: (context, state){
             log("ayarlar builder");
-            return NoTransitionPage(child: Ayarlar());
+            return const NoTransitionPage(child: Ayarlar());
           }
         ),
       ]
