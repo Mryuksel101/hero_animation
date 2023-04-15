@@ -30,7 +30,7 @@ final GoRouter router = GoRouter(
         GoRoute(
 
           path: '/home',
-          pageBuilder: (context, state) => const NoTransitionPage(child: AnaSayfa()),
+          pageBuilder: (context, state) => NoTransitionPage(child: AnaSayfa()),
           name: "home",
           routes: [
             

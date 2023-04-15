@@ -24,6 +24,8 @@ class DetaySayfasi extends StatelessWidget {
           ),
 
           Text("Kedim de kedim. Ben kedimi çok seviyorum. Kedimiii caldılar"),
+
+          
         ],
       ),
     );

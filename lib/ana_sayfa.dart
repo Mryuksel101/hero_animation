@@ -1,77 +1,80 @@
 import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animasyon/detay_sayfasi.dart';
+import 'package:flutter_animasyon/sayac.dart';
 import 'package:go_router/go_router.dart';
 
-class AnaSayfa extends StatefulWidget {
-  const AnaSayfa({super.key});
+PageController pageController = PageController();
+class AnaSayfa extends StatelessWidget{
+  GlobalKey gs = GlobalKey();
 
-  @override
-  State<AnaSayfa> createState() => _AnaSayfaState();
-}
 
-class _AnaSayfaState extends State<AnaSayfa> with AutomaticKeepAliveClientMixin{
-  @override
-  bool get wantKeepAlive => true;
 
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    log("AnaSayfa dispose");
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    log("ana sayfa init state");
-  }
   @override
   Widget build(BuildContext context) {
-    super.build(context);
+    log("AnaSayfa build");
     return Scaffold(
       appBar: AppBar(
         title: const Text("ana sayfa"),
       ),
       body: Column(
         children: [
-          Hero(
-            tag: "kedi",
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.network(
-                "https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZnVubnklMjBjYXR8ZW58MHx8MHx8&w=1000&q=80",
-                width: 190,
-              ),
+          
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.white,
+              )
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: OutlinedButton(
-              onPressed: () {
-                context.go("/home/detay-sayfasi");
-              },
-              child: const Text("detay sayfasına git")
+            width: 200,
+            height: 100,
+            child: PageView.builder(
+              controller: pageController,
+              scrollDirection: Axis.horizontal,
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                switch(index){
+                  case 0:
+                  return Container(
+                    color: Colors.green[100],
+                    child: Sayac(gs,)
+                  );
+                  break;
+                  case 1:
+                  return BosSayfa();
+                  break;
+                  case 2:
+                  return Container(
+                    color: Colors.red[100],
+                    child: Sayac(gs,)
+                  );
+                  break;
+                }
+              }
             ),
           ),
 
-          const SizedBox(
-            height: 10,
-          ),
+          
 
-          OutlinedButton(
+          CupertinoButton(
+            child: const Text("sonraki"),
             onPressed: () {
-              context.go("/home/arabalar");
+              pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.bounceIn);
             },
-            child: const Text("arabalar sayfasına git")
+          ),
+
+          CupertinoButton(
+            child: const Text("önceki sayfa"),
+            onPressed: () {
+              pageController.previousPage(duration: const Duration(seconds: 1), curve: Curves.bounceIn);
+            },
           ),
         ],
       ),
     );
   }
 }
+
+
