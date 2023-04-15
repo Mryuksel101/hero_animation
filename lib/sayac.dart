@@ -12,7 +12,7 @@ class Sayac extends StatefulWidget {
 }
 
 class _SayacState extends State<Sayac> {
-  double value = 10;
+  double _sliderValue = 0.5;
   @override
   Widget build(BuildContext context) {
     log("sayac build edildi");
@@ -20,10 +20,10 @@ class _SayacState extends State<Sayac> {
       
       min: 0,
       max: 100,
-      value: value,
-      onChanged: (double v) {
+      value: _sliderValue,
+      onChanged: (v) {
         log(v.toString());
-        value = v;
+        _sliderValue = v;
         setState(() {
           
         });

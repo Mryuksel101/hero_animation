@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 PageController pageController = PageController();
 class AnaSayfa extends StatelessWidget{
-  GlobalKey gs = GlobalKey();
+  final gs = GlobalKey();
 
 
 
@@ -56,21 +56,7 @@ class AnaSayfa extends StatelessWidget{
             ),
           ),
 
-          
 
-          CupertinoButton(
-            child: const Text("sonraki"),
-            onPressed: () {
-              pageController.nextPage(duration: const Duration(seconds: 1), curve: Curves.bounceIn);
-            },
-          ),
-
-          CupertinoButton(
-            child: const Text("önceki sayfa"),
-            onPressed: () {
-              pageController.previousPage(duration: const Duration(seconds: 1), curve: Curves.bounceIn);
-            },
-          ),
         ],
       ),
     );
