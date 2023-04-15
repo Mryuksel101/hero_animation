@@ -10,15 +10,18 @@ import 'package:flutter_animasyon/scaffold_with_bottom_navBar/scaffold_withBotto
 import 'package:go_router/go_router.dart';
 
 // private navigators
-final _rootNavigatorKey = GlobalKey<NavigatorState>();
-final _shellNavigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _sectionANavigatorKey =
+GlobalKey<NavigatorState>(debugLabel: 'sectionANav');
+final GlobalKey<NavigatorState> _sectionBNavigatorKey =
+GlobalKey<NavigatorState>(debugLabel: 'sectionBNav');
 
 final GoRouter router = GoRouter(
   initialLocation: "/home",
   
   routes: [
     ShellRoute(
-      navigatorKey: _rootNavigatorKey,
+      
+      //navigatorKey: _rootNavigatorKey,
       builder: (context, state, child) {
         log("shell router builder");
         return ScaffoldWithBottomNavBar(child: child);

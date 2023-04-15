@@ -44,6 +44,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     return Scaffold(
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
+        key: const ValueKey('ScaffoldWithNavBar'),
         currentIndex: _calculateSelectedIndex(GoRouterState.of(context).location),
         onTap: (value) => _onItemTapped(value),
         items: const [
