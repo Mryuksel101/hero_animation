@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animasyon/animated_align.dart';
+import 'package:flutter_animasyon/yokend_bugra.dart';
 
 
 
