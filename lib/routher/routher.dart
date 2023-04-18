@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_animasyon/ana_sayfa.dart';
+
 import 'package:flutter_animasyon/arabalar.dart';
 import 'package:flutter_animasyon/ayarlar.dart';
 import 'package:flutter_animasyon/deneme_sayfasi1.dart';
@@ -30,7 +30,7 @@ final GoRouter router = GoRouter(
         GoRoute(
 
           path: '/home',
-          pageBuilder: (context, state) => NoTransitionPage(child: AnaSayfa()),
+          //pageBuilder: (context, state) => NoTransitionPage(child:),
           name: "home",
           routes: [
             

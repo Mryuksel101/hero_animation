@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animasyon/ana_sayfa.dart';
 
 class Sayac extends StatefulWidget {
   const Sayac(key) : super(key: key);

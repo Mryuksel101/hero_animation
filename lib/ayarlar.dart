@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'ana_sayfa.dart';
 
 class Ayarlar extends StatefulWidget {
   const Ayarlar({super.key});
