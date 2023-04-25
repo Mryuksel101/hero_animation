@@ -38,8 +38,8 @@ class Arabalar extends StatelessWidget {
           ),
 
           OutlinedButton(
-            onPressed: () => context.go("/arabalar/deneme"),
-            child: Text("detay 1 sayfasina git"),
+            onPressed: () => context.go("/ayarlar"),
+            child: Text("ayarlar tab bar'a git"),
           ),
         ],
       ),

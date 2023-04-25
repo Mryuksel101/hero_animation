@@ -55,9 +55,9 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
           ),
 
           BottomNavigationBarItem(
-            label: "telefon",
+            label: "ayarlar",
             icon: Icon(
-              Icons.account_circle_rounded
+              Icons.settings
             ),
           ),
         ],
