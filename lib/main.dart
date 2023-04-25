@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animasyon/animated_align.dart';
+import 'package:flutter_animasyon/constraints.dart';
 import 'package:flutter_animasyon/yokend_bugra.dart';
 
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home:  const AnimatedAlign1()
+      home:  const AnaSayfa()
     );
   }
 }

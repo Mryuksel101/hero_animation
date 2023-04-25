@@ -36,22 +36,22 @@ class _YokendBugraState extends State<YokendBugra> with SingleTickerProviderStat
   double horizontalPadding = 10;
   double fontSize = 14;
   double radius = 60;
+  int sayi = 0;
   @override
   void initState() {
+    sayi = 0;
     log("init");
     // TODO: implement initState
     super.initState();
     animationController = AnimationController(
-      lowerBound: 0,
-      upperBound: 1,
       duration: const Duration(
-        seconds: 3,
+        seconds: 1,
       ),
       vsync: this,
     );
 
     animationController.forward();
-
+    
     animationController.addListener(
       () {
         verticalPadding = verticalPadding + animationController.value;
@@ -59,13 +59,15 @@ class _YokendBugraState extends State<YokendBugra> with SingleTickerProviderStat
         if(fontSize<174){
           fontSize = fontSize + animationController.value;
         }
-        
-        log(fontSize.toString());
+        sayi = sayi + 1;
+        log( animationController.value.toString());
+        log(sayi.toString());
+        //log(fontSize.toString());
         radius = radius + animationController.value;
         setState(() {
           
         });
-        log(animationController.value.toString());
+        //log(animationController.value.toString());
       }
     );
   }
